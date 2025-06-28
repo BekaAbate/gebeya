@@ -76,7 +76,7 @@ Here you list all prerequisites necessary for running the project.
 <h3>Cloning</h3>
 
 ```bash
-git clone https://github.com/BekaAbate/Gebeya
+git clone https://github.com/BekaAbate/gebeya
 ```
 
 <h3>Starting</h3>
