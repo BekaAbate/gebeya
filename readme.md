@@ -11,6 +11,11 @@
 [CLOUDINARY_BADGE]: https://img.shields.io/badge/cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white
 
 <h1 align="center" style="font-weight: bold; font-size:2.5rem;">GEBEYA: Fully responsive E-commerse website</h1>
+<p>
+    <a href="https://gebeya-frontend.vercel.app/">go to live frontend website</a> 
+
+<a href="https://gebeya-frontend.vercel.app/">go to live admin website <br/> admin_email: bekos@gmail.com <br/> password: 1234567890</a>•
+</p>
 <div align="center">
 
 ![npm][NPM__BADGE]
