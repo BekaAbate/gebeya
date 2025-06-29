@@ -14,7 +14,7 @@
 <p>
     <a href="https://gebeya-frontend.vercel.app/">go to live frontend website</a> 
 
-<a href="https://gebeya-frontend.vercel.app/">go to live admin website </a> <br/>
+<a href="https://gebeya-admin-pearl.vercel.app/">go to live admin website </a> <br/>
 <span>admin_email: bekos@gmail.com</span><br/>
 <span>admin_password: 123456789</span>
 </p>
