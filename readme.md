@@ -83,7 +83,7 @@ Here you list all prerequisites necessary for running the project.
 <h3>Cloning</h3>
 
 ```bash
-git clone https://github.com/BekaAbate/gebeya
+git clone https://github.com/BekaAbate/gebeya.git
 ```
 
 <h3>Starting</h3>
@@ -121,7 +121,7 @@ npm run dev
 <h2 id="routes">📍 Application Routes</h2>
 
 <p style='font-size:1.2rem;font-weight:700;'>
-    frontend:
+    Frontend:
 </p>
 
 | route                          | description                                     |
@@ -137,7 +137,7 @@ npm run dev
 | <kbd>/orders</kbd>             | order page                                      |
 
 <p style='font-size:1.2rem;font-weight:700;'>
-    backend
+    Backend
 </p>
 
 | API                              | description                   |
@@ -159,4 +159,15 @@ npm run dev
 | <kbd>/api/order/arifpay</kbd>    | for paymnet with arifpay      |
 | <kbd>/api/order/userorders</kbd> | for user to list orders       |
 
-<h4>check the .env file in the project to see the enviroment variables used in the project</h4>
+<p style='font-size:1.2rem;font-weight:700;'>
+    Admin:
+</p>
+
+| route                          | description                                     |
+| ------------------------------ | ----------------------------------------------- |
+| <kbd>/list</kbd>               | for listing all products                        |
+| <kbd>/add</kbd>                | to add a new product                            |
+| <kbd>/orders</kbd>             | to see all orders                               |
+
+
+<h4>check the .env files in the project directories to see the enviroment variables used in the project</h4>
