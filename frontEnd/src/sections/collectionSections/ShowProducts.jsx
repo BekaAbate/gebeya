@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import Title from "../../components/Title";
 import ProductCard from "../../components/ProductCard";
+import ProductGridSkeleton from "../../components/skeletons/ProductGridSkeleton";
 import { ShopContext } from "../../context/ShopContext";
 
 const ShowProducts = ({ category, subCategory }) => {
-    const { products, search, showSearch } = useContext(ShopContext);
+    const { products, search, showSearch, isLoading } = useContext(ShopContext);
     const [filterProducts, setFilterProducts] = useState([]);
     const [sortType, setSortType] = useState("relavent");
 
@@ -28,7 +29,7 @@ const ShowProducts = ({ category, subCategory }) => {
         setFilterProducts(productsClone);
     };
 
-    const sortProducts = (e) => {
+    const sortProducts = () => {
         let filterProductsClone = filterProducts.slice();
         switch (sortType) {
             case "low-high":
@@ -70,18 +71,24 @@ const ShowProducts = ({ category, subCategory }) => {
                 </select>
             </div>
             {/* map products */}
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-                {filterProducts.map((item) => (
-                    <ProductCard
-                        key={item._id}
-                        name={item.name}
-                        id={item._id}
-                        price={item.price}
-                        image={item.image}
-                    />
-                ))}
-            </div>
+            {isLoading ? (
+                <ProductGridSkeleton
+                    count={8}
+                    gridClassName="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6"
+                />
+            ) : (
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
+                    {filterProducts.map((item) => (
+                        <ProductCard
+                            key={item._id}
+                            name={item.name}
+                            id={item._id}
+                            price={item.price}
+                            image={item.image}
+                        />
+                    ))}
+                </div>
+            )}
         </section>
     );
 };

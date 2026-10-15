@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import Title from "../../components/Title";
 import ProductCard from "../../components/ProductCard";
+import ProductGridSkeleton from "../../components/skeletons/ProductGridSkeleton";
 
 const BestSellers = () => {
-    const { products } = useContext(ShopContext);
+    const { products, isLoading } = useContext(ShopContext);
     const [bestSellers, setBestSellers] = useState([]);
 
     useEffect(() => {
@@ -21,17 +22,21 @@ const BestSellers = () => {
                 </p>
             </div>
             {/* rendering products */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
-                {bestSellers.map((item) => (
-                    <ProductCard
-                        key={item._id}
-                        id={item._id}
-                        image={item.image}
-                        name={item.name}
-                        price={item.price}
-                    />
-                ))}
-            </div>
+            {isLoading ? (
+                <ProductGridSkeleton count={5} />
+            ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+                    {bestSellers.map((item) => (
+                        <ProductCard
+                            key={item._id}
+                            id={item._id}
+                            image={item.image}
+                            name={item.name}
+                            price={item.price}
+                        />
+                    ))}
+                </div>
+            )}
         </section>
     );
 };
